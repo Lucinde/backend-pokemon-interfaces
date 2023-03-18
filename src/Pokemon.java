@@ -16,9 +16,7 @@ public abstract class Pokemon {
         this.sound = sound;
     }
 
-    public String getType() {
-        return type;
-    }
+    public abstract String getType();
 
     public String getName() {
         return name;

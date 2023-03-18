@@ -15,10 +15,92 @@ public class ElectricPokemon extends Pokemon {
         return attacks;
     }
 
-    void thunderPunch(Pokemon name, Pokemon enemy);
-    void electroBall(Pokemon name, Pokemon enemy);
-    void thunder(Pokemon name, Pokemon enemy);
-    void voltTackle(Pokemon name, Pokemon enemy);
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    void thunderPunch(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with thunderPunch");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void electroBall(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with electroBall");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void thunder(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with thunder");
+        String enemyType = enemy.getType();
+        name.setHp(name.getHp() + 10);
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void voltTackle(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with voltTackle");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
 
 
 }

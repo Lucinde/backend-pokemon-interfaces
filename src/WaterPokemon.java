@@ -11,14 +11,95 @@ public class WaterPokemon extends Pokemon {
         super(name, level, hp, food, sound);
     }
 
+    @Override
+    public String getType() {
+        return type;
+    }
+
     List<String> getAttacks() {
         return attacks;
     }
 
-    void rainDance(Pokemon name, Pokemon enemy);
-    void surf(Pokemon name, Pokemon enemy);
-    void hydroCanon(Pokemon name, Pokemon enemy);
-    void hydroPump(Pokemon name, Pokemon enemy);
+    void rainDance(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with rainDance");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            case "electric" -> {
+                System.out.println("has no effect on " + enemy.getName());
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() + 5);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void surf(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with surf");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void hydroCanon(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroCanon");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
+    void hydroPump(Pokemon name, Pokemon enemy){
+        System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroPump");
+        String enemyType = enemy.getType();
+        switch (enemyType) {
+            case "fire" -> {
+                enemy.setHp(enemy.getHp() - 20);
+            }
+            case "water" -> {
+                enemy.setHp(enemy.getHp() - 2);
+            }
+            case "electric" -> {
+                enemy.setHp(enemy.getHp() - 10);
+            }
+            default -> {
+                enemy.setHp(enemy.getHp() - 5);
+            }
+        }
+        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
+        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+    };
 
 
 
