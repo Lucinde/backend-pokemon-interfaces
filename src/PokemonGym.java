@@ -6,7 +6,7 @@ public interface PokemonGym {
 
     void printPokemon(List<Pokemon> pokemons);
 
-    Pokemon selectPokemon(String pokemon, PokemonTrainer trainer);
+    Pokemon selectPokemon(String pokemon, List<Pokemon> pokemons);
 
     void fightRound(PokemonTrainer trainer, PokemonGymOwner owner, Pokemon pokemon, Pokemon gymPokemon);
 
@@ -23,4 +23,6 @@ public interface PokemonGym {
     void gymOwnerAttacks(Pokemon gymPokemon, Pokemon pokemon);
 
     void attackOrChange(Pokemon pokemon, Pokemon gymPokemon, PokemonTrainer trainer, PokemonGymOwner gym);
+
+    public void throwFood(Pokemon name);
 }

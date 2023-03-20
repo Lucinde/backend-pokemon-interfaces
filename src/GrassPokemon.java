@@ -5,7 +5,7 @@ public class GrassPokemon extends Pokemon {
 
     private String type = "grass";
 
-    List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leachseed", "leaveblade");
+    List<String> attacks = Arrays.asList("leafstorm", "solarbeam", "leechseed", "leaveblade");
 
     public GrassPokemon(String name, int level, int hp, String food, String sound) {
         super(name, level, hp, food, sound);
