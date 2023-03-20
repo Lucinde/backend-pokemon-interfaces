@@ -22,44 +22,13 @@ public class GrassPokemon extends Pokemon {
 
     public void leafStorm(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with leafStorm");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+        attackPoints(name, enemy);
+    }
     public void solarBeam(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with solarBeam");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+        attackPoints(name, enemy);
+    }
+
     public void leechSeed(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with leechSeed");
         String enemyType = enemy.getType();
@@ -83,9 +52,13 @@ public class GrassPokemon extends Pokemon {
         }
         System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
         System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+    }
     public void leaveBlade(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with leaveBlade");
+        attackPoints(name, enemy);
+    }
+
+    private void attackPoints(Pokemon name, Pokemon enemy) {
         String enemyType = enemy.getType();
         switch (enemyType) {
             case "fire" -> {
@@ -103,7 +76,5 @@ public class GrassPokemon extends Pokemon {
         }
         System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
         System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
-
-
+    }
 }

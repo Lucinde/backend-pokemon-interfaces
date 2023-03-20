@@ -22,66 +22,22 @@ public class FirePokemon extends Pokemon {
 
     void fireLash(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with fireLash");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+        attackPoints(name, enemy);
     };
     void flameThrower(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with flameThrower");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+        attackPoints(name, enemy);
     };
     void pyroBall(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with pyroBall");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
+        attackPoints(name, enemy);
     };
     void inferno(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with inferno");
+        attackPoints(name, enemy);
+    }
+
+    private void attackPoints(Pokemon name, Pokemon enemy) {
         String enemyType = enemy.getType();
         switch (enemyType) {
             case "fire" -> {
@@ -99,7 +55,9 @@ public class FirePokemon extends Pokemon {
         }
         System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
         System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+    }
+
+    ;
 
 
 

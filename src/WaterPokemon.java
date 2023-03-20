@@ -39,49 +39,22 @@ public class WaterPokemon extends Pokemon {
         }
         System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
         System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+    }
     void surf(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with surf");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+        attackPoints(name, enemy);
+    }
+
     void hydroCanon(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroCanon");
-        String enemyType = enemy.getType();
-        switch (enemyType) {
-            case "fire" -> {
-                enemy.setHp(enemy.getHp() - 20);
-            }
-            case "water" -> {
-                enemy.setHp(enemy.getHp() - 2);
-            }
-            case "electric" -> {
-                enemy.setHp(enemy.getHp() - 10);
-            }
-            default -> {
-                enemy.setHp(enemy.getHp() - 5);
-            }
-        }
-        System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
-        System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
+        attackPoints(name, enemy);
+    }
     void hydroPump(Pokemon name, Pokemon enemy){
         System.out.println(name.getName() + " attacks " + enemy.getName() + " with hydroPump");
+        attackPoints(name, enemy);
+    }
+
+    private void attackPoints(Pokemon name, Pokemon enemy) {
         String enemyType = enemy.getType();
         switch (enemyType) {
             case "fire" -> {
@@ -99,9 +72,6 @@ public class WaterPokemon extends Pokemon {
         }
         System.out.println(enemy.getName() + " has now " + enemy.getHp() + " health points left");
         System.out.println(name.getName() + " still has " + name.getHp() + " health points.");
-    };
-
-
-
+    }
 
 }
