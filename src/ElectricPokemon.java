@@ -5,7 +5,7 @@ public class ElectricPokemon extends Pokemon {
 
     private String type = "electric";
 
-    List<String> attacks = Arrays.asList("thunderpunch", "electroball", "thunder", "volttackle");
+    private List<String> attacks = Arrays.asList("thunderpunch", "electroball", "thunder", "volttackle");
 
     public ElectricPokemon(String name, int level, int hp, String food, String sound) {
         super(name, level, hp, food, sound);

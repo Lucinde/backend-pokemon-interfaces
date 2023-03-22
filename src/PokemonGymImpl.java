@@ -119,9 +119,9 @@ public class PokemonGymImpl implements PokemonGym {
         String givenFood = speler_A.nextLine();
         if (givenFood.equalsIgnoreCase(name.food)) {
             name.setHp(name.getHp() + 10);
-            System.out.println("Goede keuze! Je Pokemon heeft nu 10 extra HP");
+            System.out.println("Great choice! Your Pokemon gets 10 HP");
         } else {
-            System.out.println("Dit voedsel heeft geen effect op je Pokemon");
+            System.out.println("This food has no effect on your Pokemon");
         }
     }
 

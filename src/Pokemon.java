@@ -2,12 +2,12 @@ import java.util.List;
 import java.util.Scanner;
 
 public abstract class Pokemon {
-    String name;
-    int level;
-    int hp;
-    String food;
-    String sound;
-    String type;
+    private String name;
+    private int level;
+    private int hp;
+    protected String food;
+    private String sound;
+    private String type;
 
     public Pokemon(String name, int level, int hp, String food, String sound) {
         this.name = name;
