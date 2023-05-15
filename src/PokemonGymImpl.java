@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 
 // Los in deze klasse alle foutmeldingen op door (abstracte) klassen met variabelen en methodes te maken en een interface met methodes (en soms een import).
 public class PokemonGymImpl implements PokemonGym {
@@ -36,8 +36,8 @@ public class PokemonGymImpl implements PokemonGym {
     }
 
     @Override
-    public Pokemon selectPokemon(String pokemon, PokemonTrainer trainer) {
-        List<Pokemon> pokemons = trainer.getPokemons();
+    public Pokemon selectPokemon(String pokemon, List<Pokemon> pokemons) {
+        //List<Pokemon> pokemons = trainer.getPokemons();
         int number = 0;
         for (int i = 0; i < pokemons.size(); i++) {
             if (pokemons.get(i).getName().equalsIgnoreCase(pokemon)) {
@@ -101,7 +101,7 @@ public class PokemonGymImpl implements PokemonGym {
             System.out.println(p.getName());
         }
         String pokemon = speler_A.nextLine();
-        return selectPokemon(pokemon, trainer);
+        return selectPokemon(pokemon, pokemons);
     }
 
     @Override
@@ -109,6 +109,20 @@ public class PokemonGymImpl implements PokemonGym {
         Random rand = new Random();
         int maxAttacks = 4;
         return rand.nextInt(maxAttacks);
+    }
+
+    @Override
+    public void throwFood(Pokemon name) {
+        Scanner speler_A = new Scanner(System.in);
+        System.out.println("Give your Pokemon food!");
+        System.out.println("Make your choice: firenougats, pokeflakes, pokeleafs, pokebrocks, pokeflakes, everything");
+        String givenFood = speler_A.nextLine();
+        if (givenFood.equalsIgnoreCase(name.food)) {
+            name.setHp(name.getHp() + 10);
+            System.out.println("Great choice! Your Pokemon gets 10 HP");
+        } else {
+            System.out.println("This food has no effect on your Pokemon");
+        }
     }
 
     @Override
@@ -248,12 +262,14 @@ public class PokemonGymImpl implements PokemonGym {
         Scanner speler_A = new Scanner(System.in);
 
         System.out.println("Do you want to attack or change your pokemon?");
-        System.out.println("Type a for attack or c for change");
+        System.out.println("Type a for attack, f for food or c for change");
         String choice = speler_A.nextLine();
 
         if (choice.equalsIgnoreCase("a")) {
             String attack = chooseAttackPlayer(pokemon);
             performAttackPlayer(pokemon, gymPokemon, attack);
+        } else if(choice.equalsIgnoreCase("f")) {
+            throwFood(pokemon);
         } else {
             pokemon = choosePokemon(trainer);
             attackOrChange(pokemon, gymPokemon, trainer, gym);
